@@ -9,9 +9,9 @@ This plugin provides instant order notifications for WooCommerce directly to you
 - **Contributors:** shagor447  
 - **Tags:** woocommerce, telegram, notification, order, admin
 - **Requires at least:** WordPress 6.0
-- **Tested up to:** WordPress 6.9  
+- **Tested up to:** WordPress 7.0 
 - **Requires PHP:** 7.4  
-- **Stable tag:** 1.0.2 
+- **Stable tag:** 1.2.3 
 - **License:** [GPLv3 or later](https://www.gnu.org/licenses/gpl-3.0.html)
 
 ---
@@ -21,13 +21,14 @@ Telegram Order Status Notification for WooCommerce is a lightweight WooCommerce 
 ---
 
 ## ✨ Features
-- Instant Telegram Notifications: Receive real-time Telegram alerts whenever a WooCommerce order status changes.
-- Selectable Order Statuses: Choose exactly which order statuses should trigger notifications (Pending, Processing, On-hold, Completed, etc.)
-- Easy Telegram Bot Integration: Simple setup using Telegram Bot Token and Chat ID — no complex configuration required.
-- Customizable Message Format: Order notifications include clean order details such as order ID, products, total amount, and status.
-- Admin-Friendly Monitoring: Perfect for store owners who want instant updates without checking the admin panel frequently.
-- Secure & Lightweight: No customer data is stored. Uses WordPress and WooCommerce best practices.
-- Plugin Check Compliant: Fixed duplicate notifications, escaping issues, and HTML/currency symbol problems.
+- Instant Telegram notifications for WooCommerce order status changes.
+- Selectable order statuses (Pending, Processing, On-hold, Completed, etc.).
+- Premium, modern responsive tabbed settings interface.
+- Customizable notification message template builder with click-to-insert shortcodes.
+- Live Telegram Preview mockup that renders Markdown live as you edit your template.
+- Built-in connection tester to send mock messages to your bot.
+- Automated Admin Chat ID lookup tool to easily fetch your ID.
+- Interactive, step-by-step setup guide for Telegram Bot integration.
 
 ---
 
@@ -57,12 +58,48 @@ Yes. It works alongside all standard WooCommerce payment gateways and plugins.
 ---
 
 ## 🖼️ Screenshots
-1. Plugin settings page, order status selection options. ![Checkout page overview (customer view)](assets/screenshot-1.png)
-2. Telegram notification example (admin view). ![View uploaded payment receipt in order details](assets/screenshot-2.png)
+1. Telegram API Credentials setup. ![Telegram API Credentials setup.](assets/screenshot-1.png)
+2. Order status trigger setup. ![Order status trigger setup.](assets/screenshot-2.png)
+3. Custom telegram message template setup. ![Custom telegram message template setup.](assets/screenshot-3.png)
+4. Telegram setup guide. ![Telegram setup guide.](assets/screenshot-4.png)
+5. Telegram bot notification message. ![Telegram bot notification message.](assets/screenshot-5.png)
 
+---
+== External services ==
+
+This plugin uses the Telegram Bot API to send notifications.
+* Service: Telegram Bot API (https://api.telegram.org)
+* Data: Sends WooCommerce order details (ID, Total, Status, Items) via HTTPS request.
+* Policy: [Terms](https://telegram.org/tos), [Privacy](https://telegram.org/privacy)
 ---
 
 ## 📝 Changelog
+
+### 1.2.3
+- Enhancement: Redesigned Admin UI settings panel with a modern responsive tabbed design and premium layout styling.
+- Enhancement: Added customizable message templates supporting custom text and Telegram Markdown formatting.
+- Enhancement: Added click-to-insert shortcode badges for orders (status, items, total, site name, billing/shipping address, customer contacts).
+- Enhancement: Added Live Telegram Preview mockup that renders Markdown live as you edit your template.
+- Enhancement: Added "Fetch Chat ID" tool to automatically query the bot API and retrieve your Admin Chat ID.
+- Enhancement: Added "Test Connection" tool to send a mock message to your Telegram bot.
+- Compatibility: Fully tested and compatible with the latest versions of WordPress (7.0) and WooCommerce.
+
+### 1.0.5
+- Fix: Resolved 404 error by updating the 'Plugin URI' to a valid public URL.
+- Fix: Converted inline CSS styles to the standard 'admin_enqueue_scripts' hook using wp_enqueue_style to comply with review guidelines.
+- Fix: Added mandatory resource versioning to style registration to prevent browser caching issues and satisfy Plugin Check.
+
+### 1.0.4
+- Fix: Completely removed the restricted term "WooCommerce" from the plugin name and slug as per updated WordPress review guidelines.
+- Fix: Updated text domain to "instant-order-status-notifier-with-telegram".
+- Fix: Resolved trademark conflict by renaming the plugin and updating the slug.
+
+### 1.0.3
+- Fix: Resolved trademark conflict by renaming the plugin to "Instant Telegram Order Notifier for WooCommerce".
+- Fix: Added mandatory 'sanitize_callback' to register_setting() to ensure secure data handling.
+- Fix: Addressed all 'OutputNotEscaped' security errors in the admin settings page as reported by the Plugin Check tool.
+- Enhancement: Added mandatory "External services" disclosure for Telegram Bot API usage.
+- Enhancement: Improved Admin UI alignment for order status checkboxes.
 
 ### 1.0.2
 - Fixed critical error on the settings page.
@@ -77,7 +114,8 @@ Yes. It works alongside all standard WooCommerce payment gateways and plugins.
 ---
 
 ## 📢 Update Notice
-= 1.0.2 = Stable release. Fixes critical timing issues, duplicate notifications, and improves overall security and compliance.
+= 1.2.3 =
+Introduced a redesigned premium Admin UI, custom message template builder with shortcode badges, connection testing tool, automated Chat ID lookup, and full compatibility validation for WordPress 7.0 and WooCommerce.
 
 ## ⚖️ License & Copyright
 - Copyright © **Raisul Islam Shagor** 
